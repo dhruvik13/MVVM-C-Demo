@@ -20,4 +20,3 @@ extension BreakingBadTargetType {
         return URL(string: "https://\(hostname)")!
     }
 }
-

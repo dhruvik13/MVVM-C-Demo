@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol DashboardLandingConsumer: AnyObject {
-    func setScreenDetails(details: [DashboardScreenStaticInfo])
-}
-
 struct DashboardScreenStaticInfo {
     var title: String
     var image: String
@@ -29,12 +25,9 @@ class DashboardViewModel: DashboardViewModelType {
     var dashboardContent: [DashboardScreenStaticInfo] = []
     
     private let actionHandler: ActionHandler
-    private weak var consumer: DashboardLandingConsumer?
     
-    init(consumer: DashboardLandingConsumer?,
-         actionHandler: ActionHandler) {
+    init(actionHandler: ActionHandler) {
         self.actionHandler = actionHandler
-        self.consumer = consumer
         dashboardContent = [.init(title: "Characters", image: "characters", action: actionHandler.showCharacters),
                             .init(title: "Episodes", image: "episodes", action: actionHandler.showEpisodes),
                             .init(title: "Quotes", image: "quotes", action: actionHandler.showQuotes)]
@@ -50,17 +43,5 @@ class DashboardViewModel: DashboardViewModelType {
     
     func handleAction(index: Int) {
         dashboardContent[index].action()
-    }
-    
-    func handleCharactersClick() {
-        actionHandler.showCharacters()
-    }
-    
-    func handleEpisodesClick() {
-        actionHandler.showEpisodes()
-    }
-    
-    func handleQuotesClick() {
-        actionHandler.showQuotes()
     }
 }

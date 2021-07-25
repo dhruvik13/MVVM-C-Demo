@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Episode
-struct Episode: Codable {
+struct Episode: Codable, Equatable {
     let episodeID: Int
     let title, season, airDate: String
     let characters: [String]

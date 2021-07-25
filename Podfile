@@ -1,7 +1,12 @@
 target 'BreakingBad' do
   use_frameworks!
 
+  platform :ios, '13.0'
+
   pod 'Kingfisher', '~> 6.0'
+
+  pod 'SwiftLint'
+
 
   target 'BreakingBadTests' do
     inherit! :search_paths

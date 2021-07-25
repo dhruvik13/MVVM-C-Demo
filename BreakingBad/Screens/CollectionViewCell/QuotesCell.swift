@@ -54,7 +54,7 @@ class QuotesCell: UICollectionViewCell {
             quoteBy.leadingAnchor.constraint(equalTo: quoteText.leadingAnchor),
             quoteBy.topAnchor.constraint(equalTo: quoteText.bottomAnchor, constant: 10),
             quoteBy.trailingAnchor.constraint(equalTo: quoteText.trailingAnchor),
-            quoteBy.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            quoteBy.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
         ])
     }
     
@@ -72,4 +72,3 @@ class QuotesCell: UICollectionViewCell {
         return layoutAttributes
     }
 }
-

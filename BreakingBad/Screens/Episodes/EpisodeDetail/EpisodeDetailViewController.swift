@@ -30,4 +30,3 @@ extension EpisodeDetailViewController: EpisodeDetailViewModelConsumer {
         episodeCharactersLabel.text = episode.characters.joined(separator: ", ")
     }
 }
-

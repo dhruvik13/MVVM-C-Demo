@@ -28,4 +28,3 @@ class EpisodeDetailViewModel: EpisodeDetailViewModelType {
         consumer?.setEpisodeDetail(episode: selectedEpisode)
     }
 }
-

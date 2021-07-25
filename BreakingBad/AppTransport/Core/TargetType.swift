@@ -82,4 +82,3 @@ enum BreakingBadError: Swift.Error {
         }
     }
 }
-

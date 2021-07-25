@@ -22,25 +22,17 @@ class CharactersViewModel: CharactersViewModelType {
     private weak var consumer: CharactersViewModelConsumer?
     private var actionHandler: Actions
     private var seriesCharacters: Characters
-    private var characterDetailProvider: CharactersProvider
     
     init(consumer: CharactersViewModelConsumer?,
          seriesCharacters: Characters,
-         action: Actions,
-         characterDetailProvider: CharactersProvider = CharactersFetchInteractor()) {
+         action: Actions) {
         self.consumer = consumer
         self.seriesCharacters = seriesCharacters
-        self.characterDetailProvider = characterDetailProvider
         self.actionHandler = action
     }
     
     func setCharactersListWith(_ layout: ListCollectionView.FlowLayoutType) {
         consumer?.setCharacters(characterList: seriesCharacters, layout: layout)
-    }
-    
-    func getCharactersRowsCount() -> Int {
-        guard !seriesCharacters.isEmpty else { return 0 }
-        return seriesCharacters.count
     }
     
     func showCharacterDetailWith(characterId: Int) {

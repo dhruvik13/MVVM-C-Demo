@@ -52,6 +52,7 @@ extension DashboardViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // swiftlint:disable force_cast
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DashboardCell", for: indexPath) as! DashboardCell
         cell.configure(with: viewModel.getCellDataAt(index: indexPath.row))
         return cell
@@ -71,11 +72,5 @@ extension DashboardViewController: UICollectionViewDelegateFlowLayout {
 extension DashboardViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.handleAction(index: indexPath.row)
-    }
-}
-
-extension DashboardViewController: DashboardLandingConsumer {
-    func setScreenDetails(details: [DashboardScreenStaticInfo]) {
-        
     }
 }
