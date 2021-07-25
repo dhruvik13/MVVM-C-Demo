@@ -86,6 +86,7 @@ extension ListCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // swiftlint:disable force_cast
         let lay = collectionViewLayout as! UICollectionViewFlowLayout
         switch currentFlowLayout {
         case .largeTileLayout:

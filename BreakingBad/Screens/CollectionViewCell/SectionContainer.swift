@@ -41,6 +41,7 @@ class SectionContainer {
 
 class CharacterSectionHandler: SectionHandler {
     func collectionView(cellModel: CellModel, collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // swiftlint:disable force_cast
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharactersCell.identifier,
                                                       for: indexPath) as! CharactersCell
         cell.configure(with: cellModel.data[indexPath.row] as! Character)
@@ -55,6 +56,7 @@ class CharacterSectionHandler: SectionHandler {
 
 class EpisodesSectionHandler: SectionHandler {
     func collectionView(cellModel: CellModel, collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // swiftlint:disable force_cast
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EpisodesCell.identifier,
                                                       for: indexPath) as! EpisodesCell
         cell.configure(with: cellModel.data[indexPath.row] as! Episode)
@@ -69,6 +71,7 @@ class EpisodesSectionHandler: SectionHandler {
 
 class QuotesSectionHandler: SectionHandler {
     func collectionView(cellModel: CellModel, collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // swiftlint:disable force_cast
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: QuotesCell.identifier,
                                                       for: indexPath) as! QuotesCell
         cell.configure(with: cellModel.data[indexPath.row] as! Quote)

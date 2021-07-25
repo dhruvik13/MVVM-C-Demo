@@ -3,6 +3,9 @@ target 'BreakingBad' do
 
   pod 'Kingfisher', '~> 6.0'
 
+  pod 'SwiftLint'
+
+
   target 'BreakingBadTests' do
     inherit! :search_paths
     # Pods for testing

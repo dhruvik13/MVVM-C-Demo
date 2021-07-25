@@ -443,6 +443,7 @@
 			buildConfigurationList = BF47C82326A75B1D0028A781 /* Build configuration list for PBXNativeTarget "BreakingBad" */;
 			buildPhases = (
 				5ECA315436FAB66BCD3EB835 /* [CP] Check Pods Manifest.lock */,
+				BF25810B26ADA82D00A31102 /* Run SwiftLint */,
 				BF47C7F526A75B150028A781 /* Sources */,
 				BF47C7F626A75B150028A781 /* Frameworks */,
 				BF47C7F726A75B150028A781 /* Resources */,
@@ -650,6 +651,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BreakingBad-BreakingBadUITests/Pods-BreakingBad-BreakingBadUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		BF25810B26ADA82D00A31102 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		C9BAFAEEA1DCEEF5FF6EF4CD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
