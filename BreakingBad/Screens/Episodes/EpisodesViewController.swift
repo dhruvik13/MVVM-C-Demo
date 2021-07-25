@@ -40,4 +40,3 @@ extension EpisodesViewController: EpisodesViewModelConsumer {
                                                    })
     }
 }
-

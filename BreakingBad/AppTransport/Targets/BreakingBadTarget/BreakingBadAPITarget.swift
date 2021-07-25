@@ -53,7 +53,7 @@ extension BreakingBadAPITarget: BreakingBadTargetType {
         }
     }
     
-    public var parameters: [String : Any]? {
+    public var parameters: [String: Any]? {
         switch self {
         case .getAllCharacters,
              .getSingleCharacter,
@@ -69,7 +69,7 @@ extension BreakingBadAPITarget: BreakingBadTargetType {
         return nil
     }
     
-    public var headers: [String : String]? {
+    public var headers: [String: String]? {
         return nil
     }
     
@@ -77,4 +77,3 @@ extension BreakingBadAPITarget: BreakingBadTargetType {
         return .reloadIgnoringLocalAndRemoteCacheData
     }
 }
-

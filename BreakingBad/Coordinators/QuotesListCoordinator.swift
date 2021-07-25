@@ -33,7 +33,7 @@ class QuotesListCoordinator {
                         }
                     case .success(let quotes):
                         guaranteeMainThread {
-                            if (self?.presenter.viewControllers.contains(loadingVC) ?? false) {
+                            if self?.presenter.viewControllers.contains(loadingVC) ?? false {
                                 loadingVC.setLoadingState(.hidden)
                                 self?.showQuotesList(quotes)
                             }

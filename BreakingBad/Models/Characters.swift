@@ -34,5 +34,3 @@ struct Character: Codable {
         case unknown = "Unknown"
     }
 }
-
-

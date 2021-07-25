@@ -33,7 +33,7 @@ class EpisodesListCoordinator {
                         }
                     case .success(let episodes):
                         guaranteeMainThread {
-                            if (self?.presenter.viewControllers.contains(loadingVC) ?? false) {
+                            if self?.presenter.viewControllers.contains(loadingVC) ?? false {
                                 loadingVC.setLoadingState(.hidden)
                                 self?.showEpisodesList(episodes)
                             }
@@ -73,7 +73,7 @@ class EpisodesListCoordinator {
                         }
                     case .success(let episodes):
                         guaranteeMainThread {
-                            if (self?.presenter.viewControllers.contains(loadingVC) ?? false) {
+                            if self?.presenter.viewControllers.contains(loadingVC) ?? false {
                                 loadingVC.setLoadingState(.hidden)
                                 let vc = EpisodeDetailViewController.create { vc in
                                     return EpisodeDetailViewModel(consumer: vc as? EpisodeDetailViewController,

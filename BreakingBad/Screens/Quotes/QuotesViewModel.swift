@@ -41,4 +41,3 @@ class QuotesViewModel: QuotesViewModelType {
         actionHandler.showSingleQuoteDetail(quotesId)
     }
 }
-

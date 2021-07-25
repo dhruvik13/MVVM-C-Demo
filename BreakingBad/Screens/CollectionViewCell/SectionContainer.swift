@@ -53,7 +53,6 @@ class CharacterSectionHandler: SectionHandler {
     }
 }
 
-
 class EpisodesSectionHandler: SectionHandler {
     func collectionView(cellModel: CellModel, collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // swiftlint:disable force_cast
@@ -68,7 +67,6 @@ class EpisodesSectionHandler: SectionHandler {
     }
 }
 
-
 class QuotesSectionHandler: SectionHandler {
     func collectionView(cellModel: CellModel, collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // swiftlint:disable force_cast
@@ -82,4 +80,3 @@ class QuotesSectionHandler: SectionHandler {
         return "QuotesCell"
     }
 }
-

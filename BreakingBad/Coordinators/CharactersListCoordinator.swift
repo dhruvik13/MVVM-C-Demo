@@ -33,7 +33,7 @@ class CharactersListCoordinator {
                         }
                     case .success(let characters):
                         guaranteeMainThread {
-                            if (self?.presenter.viewControllers.contains(loadingVC) ?? false) {
+                            if self?.presenter.viewControllers.contains(loadingVC) ?? false {
                                 loadingVC.setLoadingState(.hidden)
                                 self?.showCharacterList(characters)
                             }
@@ -75,7 +75,7 @@ class CharactersListCoordinator {
                         }
                     case .success(let characters):
                         guaranteeMainThread {
-                            if (self?.presenter.viewControllers.contains(loadingVC) ?? false) {
+                            if self?.presenter.viewControllers.contains(loadingVC) ?? false {
                                 loadingVC.setLoadingState(.hidden)
                                 let vc = CharacterDetailViewController.create { vc in
                                     return CharacterDetailViewModel(consumer: vc as? CharacterDetailViewController,

@@ -72,7 +72,7 @@ class EpisodesCell: UICollectionViewCell {
             episodeAirDate.leadingAnchor.constraint(equalTo: episodeCharacters.leadingAnchor),
             episodeAirDate.topAnchor.constraint(equalTo: episodeCharacters.bottomAnchor, constant: 10),
             episodeAirDate.trailingAnchor.constraint(equalTo: episodeCharacters.trailingAnchor),
-            episodeAirDate.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            episodeAirDate.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
         ])
     }
     
@@ -91,4 +91,3 @@ class EpisodesCell: UICollectionViewCell {
         return layoutAttributes
     }
 }
-

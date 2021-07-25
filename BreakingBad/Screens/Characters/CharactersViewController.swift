@@ -60,7 +60,7 @@ extension CharactersViewController: CharactersViewModelConsumer {
                                                                data: characterList as [AnyObject]),
                                                    layout: layout,
                                                    handleSelection: { [weak self] tappedIndex in
-                                                        self?.viewModel.showCharacterDetailWith(characterId:  characterList[tappedIndex].charID)
+                                                        self?.viewModel.showCharacterDetailWith(characterId: characterList[tappedIndex].charID)
                                                    })
     }
 }
