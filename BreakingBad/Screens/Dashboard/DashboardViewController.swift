@@ -74,9 +74,3 @@ extension DashboardViewController: UICollectionViewDelegate {
         viewModel.handleAction(index: indexPath.row)
     }
 }
-
-extension DashboardViewController: DashboardLandingConsumer {
-    func setScreenDetails(details: [DashboardScreenStaticInfo]) {
-        
-    }
-}

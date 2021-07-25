@@ -7,15 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		884551AD3D0BF6FBF7D05A9F /* Pods_BreakingBad_BreakingBadUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010EA12E5AB1FF85866DB4B5 /* Pods_BreakingBad_BreakingBadUITests.framework */; };
 		AD218C0600DC826C04FBB5B3 /* Pods_BreakingBadTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 926BABF8B550CD2F66B98C74 /* Pods_BreakingBadTests.framework */; };
 		BF24CAA526A832FF009607B9 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF24CAA426A832FF009607B9 /* Characters.swift */; };
 		BF47C7FD26A75B150028A781 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47C7FC26A75B150028A781 /* AppDelegate.swift */; };
 		BF47C7FF26A75B150028A781 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47C7FE26A75B150028A781 /* SceneDelegate.swift */; };
 		BF47C80626A75B1D0028A781 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF47C80526A75B1D0028A781 /* Assets.xcassets */; };
 		BF47C80926A75B1D0028A781 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF47C80726A75B1D0028A781 /* LaunchScreen.storyboard */; };
-		BF47C81426A75B1D0028A781 /* BreakingBadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47C81326A75B1D0028A781 /* BreakingBadTests.swift */; };
-		BF47C81F26A75B1D0028A781 /* BreakingBadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47C81E26A75B1D0028A781 /* BreakingBadUITests.swift */; };
 		BF47C83A26A75E030028A781 /* CharactersListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47C83926A75E030028A781 /* CharactersListCoordinator.swift */; };
 		BF47C83C26A75E150028A781 /* EpisodesListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47C83B26A75E150028A781 /* EpisodesListCoordinator.swift */; };
 		BF47C83E26A75E230028A781 /* QuotesListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47C83D26A75E230028A781 /* QuotesListCoordinator.swift */; };
@@ -33,6 +30,9 @@
 		BF47C86026A823690028A781 /* EpisodesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47C85F26A823690028A781 /* EpisodesViewModel.swift */; };
 		BF47C86226A823830028A781 /* QuotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47C86126A823830028A781 /* QuotesViewModel.swift */; };
 		BF47C86426A8238D0028A781 /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47C86326A8238D0028A781 /* CharactersViewModel.swift */; };
+		BF7A21E826ADD29B0029109F /* DashboardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7A21E726ADD29B0029109F /* DashboardViewModelTests.swift */; };
+		BF7A21EA26ADE1AB0029109F /* CharactersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7A21E926ADE1AB0029109F /* CharactersViewModelTests.swift */; };
+		BF7A21EC26ADEEF30029109F /* EpisodesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7A21EB26ADEEF30029109F /* EpisodesViewModelTests.swift */; };
 		BF8553F426AB084D0066A0CD /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8553F326AB084D0066A0CD /* CharacterDetailViewController.swift */; };
 		BF8553F626AB085B0066A0CD /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8553F526AB085B0066A0CD /* CharacterDetailViewModel.swift */; };
 		BF8553F826AB08700066A0CD /* CharacterDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF8553F726AB08700066A0CD /* CharacterDetailViewController.storyboard */; };
@@ -69,13 +69,6 @@
 			remoteGlobalIDString = BF47C7F826A75B150028A781;
 			remoteInfo = BreakingBad;
 		};
-		BF47C81B26A75B1D0028A781 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BF47C7F126A75B150028A781 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BF47C7F826A75B150028A781;
-			remoteInfo = BreakingBad;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -94,11 +87,7 @@
 		BF47C80826A75B1D0028A781 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF47C80A26A75B1D0028A781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF47C80F26A75B1D0028A781 /* BreakingBadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreakingBadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF47C81326A75B1D0028A781 /* BreakingBadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadTests.swift; sourceTree = "<group>"; };
 		BF47C81526A75B1D0028A781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF47C81A26A75B1D0028A781 /* BreakingBadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreakingBadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF47C81E26A75B1D0028A781 /* BreakingBadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadUITests.swift; sourceTree = "<group>"; };
-		BF47C82026A75B1D0028A781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF47C83926A75E030028A781 /* CharactersListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListCoordinator.swift; sourceTree = "<group>"; };
 		BF47C83B26A75E150028A781 /* EpisodesListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesListCoordinator.swift; sourceTree = "<group>"; };
 		BF47C83D26A75E230028A781 /* QuotesListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesListCoordinator.swift; sourceTree = "<group>"; };
@@ -116,6 +105,9 @@
 		BF47C85F26A823690028A781 /* EpisodesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewModel.swift; sourceTree = "<group>"; };
 		BF47C86126A823830028A781 /* QuotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewModel.swift; sourceTree = "<group>"; };
 		BF47C86326A8238D0028A781 /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
+		BF7A21E726ADD29B0029109F /* DashboardViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModelTests.swift; sourceTree = "<group>"; };
+		BF7A21E926ADE1AB0029109F /* CharactersViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModelTests.swift; sourceTree = "<group>"; };
+		BF7A21EB26ADEEF30029109F /* EpisodesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewModelTests.swift; sourceTree = "<group>"; };
 		BF8553F326AB084D0066A0CD /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		BF8553F526AB085B0066A0CD /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		BF8553F726AB08700066A0CD /* CharacterDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CharacterDetailViewController.storyboard; sourceTree = "<group>"; };
@@ -162,14 +154,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF47C81726A75B1D0028A781 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				884551AD3D0BF6FBF7D05A9F /* Pods_BreakingBad_BreakingBadUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -211,7 +195,6 @@
 			children = (
 				BF47C7FB26A75B150028A781 /* BreakingBad */,
 				BF47C81226A75B1D0028A781 /* BreakingBadTests */,
-				BF47C81D26A75B1D0028A781 /* BreakingBadUITests */,
 				BF47C7FA26A75B150028A781 /* Products */,
 				701340461320A9D14F146131 /* Pods */,
 				592E2DC4AE02C98C3DAE8DC3 /* Frameworks */,
@@ -223,7 +206,6 @@
 			children = (
 				BF47C7F926A75B150028A781 /* BreakingBad.app */,
 				BF47C80F26A75B1D0028A781 /* BreakingBadTests.xctest */,
-				BF47C81A26A75B1D0028A781 /* BreakingBadUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -248,19 +230,10 @@
 		BF47C81226A75B1D0028A781 /* BreakingBadTests */ = {
 			isa = PBXGroup;
 			children = (
-				BF47C81326A75B1D0028A781 /* BreakingBadTests.swift */,
+				BF7A21E626ADD27D0029109F /* ViewModelTests */,
 				BF47C81526A75B1D0028A781 /* Info.plist */,
 			);
 			path = BreakingBadTests;
-			sourceTree = "<group>";
-		};
-		BF47C81D26A75B1D0028A781 /* BreakingBadUITests */ = {
-			isa = PBXGroup;
-			children = (
-				BF47C81E26A75B1D0028A781 /* BreakingBadUITests.swift */,
-				BF47C82026A75B1D0028A781 /* Info.plist */,
-			);
-			path = BreakingBadUITests;
 			sourceTree = "<group>";
 		};
 		BF47C82C26A75BBD0028A781 /* AppTransport */ = {
@@ -365,6 +338,16 @@
 				BF47C85C26A822A70028A781 /* BreakingBadAPITarget.swift */,
 			);
 			path = BreakingBadTarget;
+			sourceTree = "<group>";
+		};
+		BF7A21E626ADD27D0029109F /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF7A21E726ADD29B0029109F /* DashboardViewModelTests.swift */,
+				BF7A21E926ADE1AB0029109F /* CharactersViewModelTests.swift */,
+				BF7A21EB26ADEEF30029109F /* EpisodesViewModelTests.swift */,
+			);
+			path = ViewModelTests;
 			sourceTree = "<group>";
 		};
 		BF8553F126AB08290066A0CD /* CharacterDetail */ = {
@@ -477,26 +460,6 @@
 			productReference = BF47C80F26A75B1D0028A781 /* BreakingBadTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		BF47C81926A75B1D0028A781 /* BreakingBadUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BF47C82926A75B1D0028A781 /* Build configuration list for PBXNativeTarget "BreakingBadUITests" */;
-			buildPhases = (
-				4BB15560890A69C2778A4326 /* [CP] Check Pods Manifest.lock */,
-				BF47C81626A75B1D0028A781 /* Sources */,
-				BF47C81726A75B1D0028A781 /* Frameworks */,
-				BF47C81826A75B1D0028A781 /* Resources */,
-				AB3A7F3835DEED744DBC304A /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BF47C81C26A75B1D0028A781 /* PBXTargetDependency */,
-			);
-			name = BreakingBadUITests;
-			productName = BreakingBadUITests;
-			productReference = BF47C81A26A75B1D0028A781 /* BreakingBadUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -510,10 +473,6 @@
 						CreatedOnToolsVersion = 12.5.1;
 					};
 					BF47C80E26A75B1D0028A781 = {
-						CreatedOnToolsVersion = 12.5.1;
-						TestTargetID = BF47C7F826A75B150028A781;
-					};
-					BF47C81926A75B1D0028A781 = {
 						CreatedOnToolsVersion = 12.5.1;
 						TestTargetID = BF47C7F826A75B150028A781;
 					};
@@ -534,7 +493,6 @@
 			targets = (
 				BF47C7F826A75B150028A781 /* BreakingBad */,
 				BF47C80E26A75B1D0028A781 /* BreakingBadTests */,
-				BF47C81926A75B1D0028A781 /* BreakingBadUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -564,13 +522,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF47C81826A75B1D0028A781 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -589,28 +540,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BreakingBad/Pods-BreakingBad-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4BB15560890A69C2778A4326 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BreakingBad-BreakingBadUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5ECA315436FAB66BCD3EB835 /* [CP] Check Pods Manifest.lock */ = {
@@ -633,23 +562,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AB3A7F3835DEED744DBC304A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BreakingBad-BreakingBadUITests/Pods-BreakingBad-BreakingBadUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BreakingBad-BreakingBadUITests/Pods-BreakingBad-BreakingBadUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BreakingBad-BreakingBadUITests/Pods-BreakingBad-BreakingBadUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BF25810B26ADA82D00A31102 /* Run SwiftLint */ = {
@@ -743,15 +655,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF47C81426A75B1D0028A781 /* BreakingBadTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF47C81626A75B1D0028A781 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF47C81F26A75B1D0028A781 /* BreakingBadUITests.swift in Sources */,
+				BF7A21EA26ADE1AB0029109F /* CharactersViewModelTests.swift in Sources */,
+				BF7A21EC26ADEEF30029109F /* EpisodesViewModelTests.swift in Sources */,
+				BF7A21E826ADD29B0029109F /* DashboardViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,11 +668,6 @@
 			isa = PBXTargetDependency;
 			target = BF47C7F826A75B150028A781 /* BreakingBad */;
 			targetProxy = BF47C81026A75B1D0028A781 /* PBXContainerItemProxy */;
-		};
-		BF47C81C26A75B1D0028A781 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BF47C7F826A75B150028A781 /* BreakingBad */;
-			targetProxy = BF47C81B26A75B1D0028A781 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -981,46 +882,6 @@
 			};
 			name = Release;
 		};
-		BF47C82A26A75B1D0028A781 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F00B957B3114251BE33CFECD /* Pods-BreakingBad-BreakingBadUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = BreakingBadUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.BreakingBadUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BreakingBad;
-			};
-			name = Debug;
-		};
-		BF47C82B26A75B1D0028A781 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45D35324C064A9C4CAD29983 /* Pods-BreakingBad-BreakingBadUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = BreakingBadUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.BreakingBadUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BreakingBad;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1047,15 +908,6 @@
 			buildConfigurations = (
 				BF47C82726A75B1D0028A781 /* Debug */,
 				BF47C82826A75B1D0028A781 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		BF47C82926A75B1D0028A781 /* Build configuration list for PBXNativeTarget "BreakingBadUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BF47C82A26A75B1D0028A781 /* Debug */,
-				BF47C82B26A75B1D0028A781 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

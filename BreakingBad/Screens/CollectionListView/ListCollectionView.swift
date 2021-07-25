@@ -46,6 +46,12 @@ class ListCollectionView: UIView {
         setUpCollectionView()
     }
     
+    public func changeLayout(layout: FlowLayoutType) {
+        currentFlowLayout = layout
+        collectionView.setContentOffset(.zero, animated: true)
+        collectionView.reloadData()
+    }
+    
     // MARK: - CollectionView
     private func setUpCollectionView() {
         
@@ -62,7 +68,7 @@ class ListCollectionView: UIView {
         setUpFlowLayout()
     }
     
-    func setUpFlowLayout() {
+    private func setUpFlowLayout() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = CGFloat(layoutComponent.minimumLineSpacing)

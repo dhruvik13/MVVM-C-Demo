@@ -10,7 +10,6 @@ import UIKit
 protocol CharactersViewModelType {
     var title: String { get set }
     func setCharactersListWith(_ layout: ListCollectionView.FlowLayoutType)
-    func getCharactersRowsCount() -> Int
     func showCharacterDetailWith(characterId: Int)
 }
 
@@ -21,7 +20,7 @@ class CharactersViewController: BaseViewController<CharactersViewModelType> {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = viewModel.title
-        viewModel.setCharactersListWith(.largeTileLayout)
+        viewModel.setCharactersListWith(.smallTileLayout)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "largeTileLayout"),
                                                             style: .plain,
                                                             target: self,
@@ -31,18 +30,12 @@ class CharactersViewController: BaseViewController<CharactersViewModelType> {
     @objc
     func changeLayout() {
         if listHolderView.currentFlowLayout == .largeTileLayout {
-            viewModel.setCharactersListWith(.smallTileLayout)
-            navigationItem.rightBarButtonItem?.image = UIImage(named: "smallTileLayout")
-        } else {
-            viewModel.setCharactersListWith(.largeTileLayout)
+            listHolderView.changeLayout(layout: .smallTileLayout)
             navigationItem.rightBarButtonItem?.image = UIImage(named: "largeTileLayout")
+        } else {
+            listHolderView.changeLayout(layout: .largeTileLayout)
+            navigationItem.rightBarButtonItem?.image = UIImage(named: "smallTileLayout")
         }
-        
-        UIView.animate(withDuration: 0.5, animations: {
-            if let indexPath = self.listHolderView.collectionView?.indexPathForItem(at: CGPoint(x: 0, y: 0)) {
-                self.listHolderView.collectionView?.scrollToItem(at: indexPath, at: .top, animated: true)
-            }
-        })
     }
     
     @IBAction func handleCharacterSelection(_ sender: Any) {

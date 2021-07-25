@@ -8,7 +8,7 @@
 typealias Characters = [Character]
 
 // MARK: - Character
-struct Character: Codable {
+struct Character: Codable, Equatable {
     let charID: Int
     let name: String
     let birthday: String

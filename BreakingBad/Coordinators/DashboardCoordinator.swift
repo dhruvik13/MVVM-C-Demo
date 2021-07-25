@@ -20,9 +20,8 @@ class DashboardCoordinator {
     }
     
     func start() {
-        let vc = DashboardViewController.create { vc in
-            return DashboardViewModel(consumer: vc as? DashboardViewController,
-                                      actionHandler: .init(showCharacters: showAllCharacters,
+        let vc = DashboardViewController.create { _ in
+            return DashboardViewModel(actionHandler: .init(showCharacters: showAllCharacters,
                                                            showEpisodes: showAllEpisode,
                                                            showQuotes: showAllQuotes)
             )
