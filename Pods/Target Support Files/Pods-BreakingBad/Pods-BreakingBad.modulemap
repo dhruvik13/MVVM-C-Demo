@@ -1,0 +1,6 @@
+framework module Pods_BreakingBad {
+  umbrella header "Pods-BreakingBad-umbrella.h"
+
+  export *
+  module * { export * }
+}
