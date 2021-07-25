@@ -1,0 +1,15 @@
+stages:
+  - build
+  - test
+
+compile and build:
+  stage: build
+  script:
+    - xcodebuild -workspace BreakingBad.xcworkspace -scheme BreakingBadDebug
+  tags:
+    - ios
+
+#unit_tests:
+#    stage: test
+#    script:
+#        - xcodebuild -workspace BreakingBad.xcworkspace -scheme BreakingBadDebug
