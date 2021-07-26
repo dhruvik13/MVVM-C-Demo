@@ -58,12 +58,14 @@ class CharactersListCoordinator {
         presenter.pushByReplacingLast(vc, animated: false)
     }
     
-    private func showSelectedCharacter(characterId: Int) {
+    func showSelectedCharacter(characterId: Int) {
         let loadingVC = LoadingViewController.vend()
         
         loadingVC.onViewDidAppear = { [weak self] _ in
+            
             func fetchSingleCharacter() {
                 loadingVC.setLoadingState(.loading)
+                
                 self?.interactor.getSelectedCharacterDetail(with: characterId) { result in
                     switch result {
                     case .failure(let error):
@@ -77,18 +79,23 @@ class CharactersListCoordinator {
                         guaranteeMainThread {
                             if self?.presenter.viewControllers.contains(loadingVC) ?? false {
                                 loadingVC.setLoadingState(.hidden)
-                                let vc = CharacterDetailViewController.create { vc in
-                                    return CharacterDetailViewModel(consumer: vc as? CharacterDetailViewController,
-                                                                    selectedCharacter: characters[0])
-                                }
-                                self?.presenter.pushByReplacingLast(vc, animated: false)
+                                self?.showCharacterDetail(characters: characters)
                             }
                         }
                     }
                 }
             }
+            
             fetchSingleCharacter()
         }
         presenter.pushViewController(loadingVC, animated: true)
+    }
+    
+    private func showCharacterDetail(characters: Characters) {
+        let vc = CharacterDetailViewController.create { vc in
+            return CharacterDetailViewModel(consumer: vc as? CharacterDetailViewController,
+                                            selectedCharacter: characters[0])
+        }
+        presenter.pushByReplacingLast(vc, animated: false)
     }
 }
