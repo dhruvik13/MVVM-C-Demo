@@ -7,10 +7,6 @@
 
 import UIKit
 
-public protocol HasChangeLayoutFunctionality {
-    
-}
-
 open class BaseViewController<T>: UIViewController {
     open var viewModel: T!
 

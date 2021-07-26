@@ -17,6 +17,11 @@ class ListCollectionView: UIView {
         case listLayout
     }
     
+    private var handleDidSelect: ((Int) -> Void)?
+    var cellModel: CellModel?
+    let sectionContainer: SectionContainer = SectionContainer(handlers: [CharacterSectionHandler(),
+                                                                         EpisodesSectionHandler(),
+                                                                         QuotesSectionHandler()])
     @IBOutlet weak var collectionView: UICollectionView!
     var currentFlowLayout: FlowLayoutType = .largeTileLayout
     
@@ -29,13 +34,6 @@ class ListCollectionView: UIView {
         super.init(coder: aDecoder)
         loadViewFromNib(bundle: Bundle.main)
     }
-    
-    private var handleDidSelect: ((Int) -> Void)?
-    var cellModel: CellModel?
-    
-    let sectionContainer: SectionContainer = SectionContainer(handlers: [CharacterSectionHandler(),
-                                                                         EpisodesSectionHandler(),
-                                                                         QuotesSectionHandler()])
     
     public func createAndBindCollectionView(with cellModel: CellModel,
                                             layout: FlowLayoutType,

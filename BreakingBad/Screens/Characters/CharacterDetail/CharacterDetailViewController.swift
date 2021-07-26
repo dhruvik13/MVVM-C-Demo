@@ -21,21 +21,11 @@ class CharacterDetailViewController: BaseViewController<CharacterDetailViewModel
     @IBOutlet private weak var portrayed: UILabel!
     @IBOutlet private weak var category: UILabel!
     @IBOutlet private weak var characterImageView: UIImageView!
-    @IBOutlet private weak var blueImageView: UIImageView!
+    @IBOutlet private weak var blurImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.setInitialDetails()
-    }
-    
-    func addBlurImage(usingImage image: UIImage, blurAmount: CGFloat) -> UIImage? {
-        guard let ciImage = CIImage(image: image) else { return nil }
-        let blurfilter = CIFilter(name: "CIGaussianBlur")
-        blurfilter?.setValue(ciImage, forKey: kCIInputImageKey)
-        blurfilter?.setValue(blurAmount, forKey: kCIInputRadiusKey)
-        
-        guard let outputImage = blurfilter?.outputImage else { return nil }
-        return UIImage(ciImage: outputImage)
     }
 }
 
@@ -46,8 +36,9 @@ extension CharacterDetailViewController: CharacterDetailViewModelConsumer {
         characterImageView.kf.indicatorType = .activity
         characterImageView.kf.setImage(with: imageURL) { [weak self] result in
             if let image = (try? result.get())?.image {
-                self?.blueImageView.image = self?.addBlurImage(usingImage: image, blurAmount: 10.0)
-                self?.blueImageView.contentMode = .scaleToFill
+                self?.blurImageView.image = image
+                self?.blurImageView.applyBlurEffect()
+                self?.blurImageView.contentMode = .scaleToFill
             }
         }
         
@@ -56,5 +47,15 @@ extension CharacterDetailViewController: CharacterDetailViewModelConsumer {
         characterStatus.text = character.status.rawValue
         portrayed.text = character.portrayed
         category.text = character.category
+    }
+}
+
+extension UIImageView {
+    func applyBlurEffect() {
+        let blurEffect = UIBlurEffect(style: .light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        addSubview(blurEffectView)
     }
 }
