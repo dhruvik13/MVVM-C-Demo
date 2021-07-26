@@ -16,6 +16,7 @@ class EpisodeDetailViewController: BaseViewController<EpisodeDetailViewModelType
     
     @IBOutlet weak var seriesWithSeasonLabel: UILabel!
     @IBOutlet weak var episodeCharactersLabel: UILabel!
+    @IBOutlet weak var episodeNumber: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,9 @@ class EpisodeDetailViewController: BaseViewController<EpisodeDetailViewModelType
 extension EpisodeDetailViewController: EpisodeDetailViewModelConsumer {
     func setEpisodeDetail(episode: Episode) {
         title = episode.title
-        seriesWithSeasonLabel.text = String("This episode is part of \(episode.series) in season \(episode.season). Which was aired on \(episode.airDate). (\(episode.episodeID))")
+        seriesWithSeasonLabel.text = String("This episode is part of series: (\(episode.series)) in season (\(episode.season)).\n Which was aired on \(episode.airDate).")
         episodeCharactersLabel.text = episode.characters.joined(separator: ", ")
+        episodeNumber.font = UIFont.italicSystemFont(ofSize: 13.0)
+        episodeNumber.text = "(episode #\(episode.episodeID))"
     }
 }
