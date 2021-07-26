@@ -54,7 +54,6 @@ class ListCollectionView: UIView {
     
     // MARK: - CollectionView
     private func setUpCollectionView() {
-        
         // Resgister Collectionview with all availabe custom cells
         collectionView.register(CharactersCell.self,
                                 forCellWithReuseIdentifier: CharactersCell.identifier)

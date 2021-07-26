@@ -57,7 +57,7 @@ class EpisodesListCoordinator {
         presenter.pushByReplacingLast(vc, animated: false)
     }
     
-    private func showSelectedEpisode(episodeId: Int) {
+    func showSelectedEpisode(episodeId: Int) {
         let loadingVC = LoadingViewController.vend()
         loadingVC.onViewWillAppear = { [weak self] in
             func fetchSingleEpisode() {
@@ -75,11 +75,7 @@ class EpisodesListCoordinator {
                         guaranteeMainThread {
                             if self?.presenter.viewControllers.contains(loadingVC) ?? false {
                                 loadingVC.setLoadingState(.hidden)
-                                let vc = EpisodeDetailViewController.create { vc in
-                                    return EpisodeDetailViewModel(consumer: vc as? EpisodeDetailViewController,
-                                                                  selectedEpisode: episodes[0])
-                                }
-                                self?.presenter.pushByReplacingLast(vc, animated: false)
+                                self?.showEpisodeDetail(episodes: episodes)
                             }
                         }
                     }
@@ -88,5 +84,13 @@ class EpisodesListCoordinator {
             fetchSingleEpisode()
         }
         presenter.pushViewController(loadingVC, animated: true)
+    }
+    
+    private func showEpisodeDetail(episodes: Episodes) {
+        let vc = EpisodeDetailViewController.create { vc in
+            return EpisodeDetailViewModel(consumer: vc as? EpisodeDetailViewController,
+                                          selectedEpisode: episodes[0])
+        }
+        presenter.pushByReplacingLast(vc, animated: false)
     }
 }
