@@ -36,6 +36,7 @@ extension QuotesViewController: QuotesViewModelConsumer {
         listHolderView.createAndBindCollectionView(with: .init(cellType: QuotesSectionHandler(),
                                                                data: quoteList as [AnyObject]),
                                                    layout: .listLayout,
+                                                   bindCollectionFor: .Quotes,
                                                    handleSelection: { tappedIndex in
                                                         print(tappedIndex)
                                                    })

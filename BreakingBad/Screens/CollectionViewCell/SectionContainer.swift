@@ -10,7 +10,8 @@ import UIKit
 /// Struct for CellModel
 public struct CellModel {
     var cellType: SectionHandler
-    var data: [AnyObject]
+    var data: [AnyObject]?
+    var sectionContent: [[Any]]?
 }
 
 protocol SectionHandler {
@@ -44,7 +45,7 @@ class CharacterSectionHandler: SectionHandler {
         // swiftlint:disable force_cast
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharactersCell.identifier,
                                                       for: indexPath) as! CharactersCell
-        cell.configure(with: cellModel.data[indexPath.row] as! Character)
+        cell.configure(with: cellModel.data?[indexPath.row] as! Character)
         return cell
     }
     
@@ -58,7 +59,9 @@ class EpisodesSectionHandler: SectionHandler {
         // swiftlint:disable force_cast
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EpisodesCell.identifier,
                                                       for: indexPath) as! EpisodesCell
-        cell.configure(with: cellModel.data[indexPath.row] as! Episode)
+                        
+        let episodeDetail = cellModel.sectionContent?[indexPath.section][indexPath.row] as! Episode
+        cell.configure(with: episodeDetail)
         return cell
     }
     
@@ -72,7 +75,7 @@ class QuotesSectionHandler: SectionHandler {
         // swiftlint:disable force_cast
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: QuotesCell.identifier,
                                                       for: indexPath) as! QuotesCell
-        cell.configure(with: cellModel.data[indexPath.row] as! Quote)
+        cell.configure(with: cellModel.data?[indexPath.row] as! Quote)
         return cell
     }
     

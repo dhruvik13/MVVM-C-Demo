@@ -17,6 +17,12 @@ class ListCollectionView: UIView {
         case listLayout
     }
     
+    enum CollectionDatasource {
+        case Characters
+        case Episodes
+        case Quotes
+    }
+    
     private var handleDidSelect: ((Int) -> Void)?
     var cellModel: CellModel?
     let sectionContainer: SectionContainer = SectionContainer(handlers: [CharacterSectionHandler(),
@@ -24,6 +30,7 @@ class ListCollectionView: UIView {
                                                                          QuotesSectionHandler()])
     @IBOutlet weak var collectionView: UICollectionView!
     var currentFlowLayout: FlowLayoutType = .largeTileLayout
+    var currentCollectionDatasource: CollectionDatasource = .Characters
     
     public init(with frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -37,8 +44,10 @@ class ListCollectionView: UIView {
     
     public func createAndBindCollectionView(with cellModel: CellModel,
                                             layout: FlowLayoutType,
+                                            bindCollectionFor: CollectionDatasource,
                                             handleSelection: @escaping (Int) -> Void) {
         self.cellModel = cellModel
+        currentCollectionDatasource = bindCollectionFor
         handleDidSelect = handleSelection
         currentFlowLayout = layout
         setUpCollectionView()
@@ -53,12 +62,22 @@ class ListCollectionView: UIView {
     // MARK: - CollectionView
     private func setUpCollectionView() {
         // Resgister Collectionview with all availabe custom cells
-        collectionView.register(CharactersCell.self,
-                                forCellWithReuseIdentifier: CharactersCell.identifier)
-        collectionView.register(EpisodesCell.self,
-                                forCellWithReuseIdentifier: EpisodesCell.identifier)
-        collectionView.register(QuotesCell.self,
-                                forCellWithReuseIdentifier: QuotesCell.identifier)
+        switch currentCollectionDatasource {
+        case .Characters:
+            collectionView.register(CharactersCell.self,
+                                    forCellWithReuseIdentifier: CharactersCell.identifier)
+        case .Episodes:
+            collectionView.register(EpisodesCell.self,
+                                    forCellWithReuseIdentifier: EpisodesCell.identifier)
+        case .Quotes:
+            collectionView.register(QuotesCell.self,
+                                    forCellWithReuseIdentifier: QuotesCell.identifier)
+        }
+        
+        collectionView.register(HeaderReusableView.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: HeaderReusableView.identifier)
+        
         collectionView.delegate = self
         collectionView.dataSource = self
 
@@ -105,10 +124,9 @@ extension ListCollectionView: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: 0, height: layoutComponent.minimumLineSpacing)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        if currentCollectionDatasource == .Episodes {
+            return CGSize(width: collectionView.frame.width, height: 60)
+        }
         return CGSize(width: 0, height: layoutComponent.minimumLineSpacing)
     }
 }
@@ -120,8 +138,37 @@ extension ListCollectionView: UICollectionViewDelegate {
 }
 
 extension ListCollectionView: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
+                                                                         withReuseIdentifier: HeaderReusableView.identifier,
+                                                                         for: indexPath) as! HeaderReusableView
+            switch currentCollectionDatasource {
+            case .Episodes:
+                guard let episode = cellModel?.sectionContent?[indexPath.section][indexPath.section] as? Episode else {
+                    return header
+                }
+                header.configure(with: "Series #\(episode.season)" )
+            default:
+                header.configure(with: "")
+            }
+            return header
+        default:
+            return UICollectionReusableView(frame: CGRect(x: 0, y: 0, width: 0, height: layoutComponent.minimumLineSpacing))
+        }
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return cellModel?.sectionContent?.count ?? 1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cellModel?.data.count ?? 0
+        if let data = cellModel?.data {
+            return data.count
+        } else {
+            return cellModel?.sectionContent?[section].count ?? 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

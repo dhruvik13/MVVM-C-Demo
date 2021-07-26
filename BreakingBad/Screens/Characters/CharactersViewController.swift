@@ -52,6 +52,7 @@ extension CharactersViewController: CharactersViewModelConsumer {
         listHolderView.createAndBindCollectionView(with: .init(cellType: CharacterSectionHandler(),
                                                                data: characterList as [AnyObject]),
                                                    layout: layout,
+                                                   bindCollectionFor: .Characters,
                                                    handleSelection: { [weak self] tappedIndex in
                                                         self?.viewModel.showCharacterDetailWith(characterId: characterList[tappedIndex].charID)
                                                    })
