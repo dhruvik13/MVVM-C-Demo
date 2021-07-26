@@ -32,9 +32,23 @@ class EpisodesViewController: BaseViewController<EpisodesViewModelType> {
 extension EpisodesViewController: EpisodesViewModelConsumer {
     func setEpisodess(episodesList: Episodes) {
         title = viewModel.title
+        
+        let groupedEpisodeDictionary = Dictionary(grouping: episodesList) { (episode) -> String in
+            let season = episode.season.trimmingCharacters(in: .whitespacesAndNewlines) // because we're receiving one element as " 1" instead of "1'
+            return season
+        }
+        
+        var groupedEpisodes = [[Episode]]()
+        
+        let keys = groupedEpisodeDictionary.keys.sorted()
+        keys.forEach { (key) in
+            groupedEpisodes.append(groupedEpisodeDictionary[key]!)
+        }
+        
         listHolderView.createAndBindCollectionView(with: .init(cellType: EpisodesSectionHandler(),
-                                                               data: episodesList as [AnyObject]),
+                                                               sectionContent: groupedEpisodes),
                                                    layout: .listLayout,
+                                                   bindCollectionFor: .Episodes,
                                                    handleSelection: { [weak self] tappedIndex in
                                                         self?.viewModel.showEpisodeDetailWith(episodeId: episodesList[tappedIndex].episodeID)
                                                    })
