@@ -30,6 +30,6 @@ extension EpisodeDetailViewController: EpisodeDetailViewModelConsumer {
         seriesWithSeasonLabel.text = String("This episode is part of series: (\(episode.series)) in season (\(episode.season)).\n Which was aired on \(episode.airDate).")
         episodeCharactersLabel.text = episode.characters.joined(separator: ", ")
         episodeNumber.font = UIFont.italicSystemFont(ofSize: 13.0)
-        episodeNumber.text = "(episode #\(episode.episodeID))"
+        episodeNumber.text = "(episode #\(episode.episode))"
     }
 }

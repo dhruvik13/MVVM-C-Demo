@@ -49,8 +49,8 @@ extension EpisodesViewController: EpisodesViewModelConsumer {
                                                                sectionContent: groupedEpisodes),
                                                    layout: .listLayout,
                                                    bindCollectionFor: .Episodes,
-                                                   handleSelection: { [weak self] tappedIndex in
-                                                        self?.viewModel.showEpisodeDetailWith(episodeId: episodesList[tappedIndex].episodeID)
+                                                   handleSelection: { [weak self] tappedIndexPath in
+                                                    self?.viewModel.showEpisodeDetailWith(episodeId: groupedEpisodes[tappedIndexPath.section][tappedIndexPath.row].episodeID)
                                                    })
     }
 }

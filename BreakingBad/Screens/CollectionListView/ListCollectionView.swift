@@ -23,7 +23,7 @@ class ListCollectionView: UIView {
         case Quotes
     }
     
-    private var handleDidSelect: ((Int) -> Void)?
+    private var handleDidSelect: ((IndexPath) -> Void)?
     var cellModel: CellModel?
     let sectionContainer: SectionContainer = SectionContainer(handlers: [CharacterSectionHandler(),
                                                                          EpisodesSectionHandler(),
@@ -45,7 +45,7 @@ class ListCollectionView: UIView {
     public func createAndBindCollectionView(with cellModel: CellModel,
                                             layout: FlowLayoutType,
                                             bindCollectionFor: CollectionDatasource,
-                                            handleSelection: @escaping (Int) -> Void) {
+                                            handleSelection: @escaping (IndexPath) -> Void) {
         self.cellModel = cellModel
         currentCollectionDatasource = bindCollectionFor
         handleDidSelect = handleSelection
@@ -133,7 +133,7 @@ extension ListCollectionView: UICollectionViewDelegateFlowLayout {
 
 extension ListCollectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        handleDidSelect?(indexPath.row)
+        handleDidSelect?(indexPath)
     }
 }
 

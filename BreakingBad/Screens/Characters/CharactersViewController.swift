@@ -53,8 +53,8 @@ extension CharactersViewController: CharactersViewModelConsumer {
                                                                data: characterList as [AnyObject]),
                                                    layout: layout,
                                                    bindCollectionFor: .Characters,
-                                                   handleSelection: { [weak self] tappedIndex in
-                                                        self?.viewModel.showCharacterDetailWith(characterId: characterList[tappedIndex].charID)
+                                                   handleSelection: { [weak self] tappedIndexPath in
+                                                        self?.viewModel.showCharacterDetailWith(characterId: characterList[tappedIndexPath.row].charID)
                                                    })
     }
 }
