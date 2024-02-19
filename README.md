@@ -23,7 +23,7 @@ Project contains [Cocoapods](https://cocoapods.org/) dependency manager to handl
 - [Kingfisher](https://github.com/onevcat/Kingfisher) (to downloading an image)
 - [SwiftLint](https://github.com/realm/SwiftLint) (to improve code quality)
 
-For TDD approach written test cases for ViewModels (couldnn't affoard much time to it), so code coverage will not be that good. :(
+For TDD approach written test cases for ViewModels, so code coverage will not be that good. :(
 
 Most of the screen in app, supports **Dark** and **Light** theme
 
